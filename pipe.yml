@@ -1,0 +1,41 @@
+name: AWS SSM Deploy
+image: DOCKERHUB_NAMESPACE/aws-ssm-deploy:1.0.0
+description: Run AWS SSM commands (e.g. AWS-RunShellScript) on EC2 instances during a Bitbucket deployment. Supports OIDC and static-key authentication.
+category: Deployment
+repository: https://github.com/opasni/aws-ssm-deploy
+maintainers:
+  - name: Your Team
+variables:
+  # --- Authentication ---
+  - name: AWS_DEFAULT_REGION
+  - name: AWS_OIDC_ROLE_ARN
+    default: ""
+  - name: AWS_ACCESS_KEY_ID
+    default: ""
+  - name: AWS_SECRET_ACCESS_KEY
+    default: ""
+  - name: AWS_SESSION_TOKEN
+    default: ""
+  # --- Target & command ---
+  - name: INSTANCE_IDS
+  - name: DOCUMENT_NAME
+    default: "AWS-RunShellScript"
+  - name: COMMANDS
+    default: ""
+  - name: SCRIPT
+    default: ""
+  - name: RUN_AS
+    default: ""
+  - name: COMMENT
+    default: ""
+  # --- Behaviour ---
+  - name: WAIT
+    default: "true"
+  - name: WAIT_TIMEOUT
+    default: "600"
+  - name: POLL_INTERVAL
+    default: "5"
+  - name: FAIL_ON_ERROR
+    default: "true"
+  - name: DEBUG
+    default: "false"

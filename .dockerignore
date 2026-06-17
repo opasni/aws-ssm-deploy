@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+test/
+test-requirements.txt
+context.md
+pipeline.yaml
+.git/
